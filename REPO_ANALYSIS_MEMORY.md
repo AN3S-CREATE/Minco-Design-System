@@ -30,7 +30,7 @@ Phase 3 — Full design system **source complete** (2026-10-18). Tokens + primit
 ## Next Immediate Steps
 1. Unlock repo handles → delete corrupt `node_modules*` → one clean `npm install --no-fund --no-audit`.
 2. Then `npm run dev` for visual check; optional `npm run build`.
-3. Commit when user asks.
+3. Done: committed + pushed to `main` on AN3S-CREATE/Minco-Design-System (`6dbc751`).
 
 ## Patterns & Recurring Issues Noticed
 - Recurring Issue: npm / node_modules lock contention on Windows — prefer `audit-tokens` / extract (no deps).
@@ -40,3 +40,4 @@ Phase 3 — Full design system **source complete** (2026-10-18). Tokens + primit
 - [2026-10-17] Scaffold + .index + memory.
 - [2026-10-18] First extraction from minco.co.za; tokens extracted.
 - [2026-10-18] Full DS source shipped; audit clean; build/preview blocked; README documents unlock path.
+- [2026-10-18] Git ops: origin → Minco-Design-System; commit `6dbc751` on `main`; no feature branches to merge/delete.
