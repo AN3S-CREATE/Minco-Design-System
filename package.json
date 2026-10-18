@@ -1,0 +1,25 @@
+{
+  "name": "minco",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Design system workspace: extract tokens & components from a target website",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w @minco/tokens && npm run build -w @minco/components && npm run build -w @minco/preview",
+    "dev": "npm run dev -w @minco/preview",
+    "preview": "npm run preview -w @minco/preview",
+    "extract": "node scripts/extract-from-url.mjs",
+    "audit:tokens": "node scripts/audit-tokens.mjs",
+    "typecheck": "tsc -b --pretty false"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,253 @@
+/**
+ * Minco primitive interaction styles (CSS variables only).
+ *
+ * Focus: the live site has no custom focus ring (browser default).
+ * These :focus-visible rules are a documented a11y proposal using --color-focus.
+ * See artifacts/captures/.../gaps.md and docs/DESIGN-SYSTEM.md.
+ */
+
+.minco-focusable:focus {
+  outline: none;
+}
+
+.minco-focusable:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* —— Button —— */
+.minco-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-tight);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition:
+    background var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
+}
+
+.minco-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.minco-btn--sm {
+  padding-block: var(--space-1);
+  padding-inline: var(--space-2);
+  font-size: var(--font-size-base);
+}
+
+.minco-btn--md {
+  padding-block: var(--space-2);
+  padding-inline: var(--space-8);
+  font-size: var(--font-size-base);
+}
+
+.minco-btn--lg {
+  padding-block: var(--space-3);
+  padding-inline: var(--space-8);
+  font-size: var(--font-size-base);
+}
+
+/* Default live CTAs — taupe */
+.minco-btn--secondary {
+  background: var(--color-secondary);
+  color: var(--color-on-secondary);
+  border: 1px solid transparent;
+}
+
+/* .bg-primary — green */
+.minco-btn--primary {
+  background: var(--color-brand);
+  color: var(--color-on-brand);
+  border: 1px solid transparent;
+}
+
+.minco-btn--primary:hover:not(:disabled) {
+  background: var(--color-brand-hover);
+}
+
+/*
+ * Outline: transparent/user variants exist in Webador CSS but unused on live CTAs.
+ * Kept as a thin border treatment for DS completeness — not a primary site pattern.
+ */
+.minco-btn--outline {
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+/* —— Link —— */
+.minco-link {
+  color: var(--color-link);
+  font-family: var(--font-family-body);
+  font-size: inherit;
+  line-height: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  transition: color var(--duration-base) var(--ease-out);
+}
+
+.minco-link:hover {
+  color: var(--color-link-hover);
+}
+
+.minco-link--nav {
+  color: var(--color-text);
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-nav);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--letter-spacing-nav);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.minco-link--nav:hover {
+  color: var(--color-text);
+  opacity: 0.75;
+}
+
+.minco-link--nav[aria-current='page'] {
+  color: var(--color-brand);
+  opacity: 1;
+}
+
+/* —— Form controls —— */
+.minco-label {
+  display: block;
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+  color: var(--color-text);
+}
+
+.minco-input,
+.minco-textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 8px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-input);
+  color: var(--color-text);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+  box-shadow: var(--shadow-sm);
+  transition:
+    border-color var(--duration-base) var(--ease-out),
+    background var(--duration-base) var(--ease-out);
+}
+
+.minco-textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.minco-input::placeholder,
+.minco-textarea::placeholder {
+  color: var(--color-text-soft);
+}
+
+.minco-input:disabled,
+.minco-textarea:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.minco-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.minco-field__hint {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-body);
+  color: var(--color-text-soft);
+}
+
+/* —— Surface / card (flat panels — no elevation) —— */
+.minco-surface {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.minco-surface--secondary {
+  background: var(--color-secondary);
+  color: var(--color-on-secondary);
+}
+
+.minco-surface--mid {
+  background: var(--color-surface-mid);
+}
+
+.minco-surface--padded {
+  padding: var(--space-8);
+}
+
+/* —— Layout —— */
+.minco-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  box-sizing: border-box;
+}
+
+.minco-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.minco-stack--row {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.minco-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-block: var(--space-4);
+}
+
+.minco-header__brand {
+  margin: 0;
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-brand);
+  letter-spacing: var(--letter-spacing-tight);
+  text-decoration: none;
+}
+
+.minco-header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

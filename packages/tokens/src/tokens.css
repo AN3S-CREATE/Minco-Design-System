@@ -1,0 +1,104 @@
+/**
+ * Minco Guesthouse design tokens
+ *
+ * Extracted from https://www.minco.co.za/ (observe-only).
+ * Gaps (dark theme, custom focus, elevation shadows) documented in capture notes
+ * and docs/DESIGN-SYSTEM.md — do not invent brand values to fill holes.
+ *
+ * Usage: import '@minco/tokens/css' or link this file.
+ */
+
+:root {
+  /* —— Color (observed) —— */
+  --color-bg: #ddebe3;
+  --color-surface: #f0f2f1; /* theme bg-user-2 */
+  --color-surface-mid: #cacccb; /* theme bg-user-1 */
+  --color-surface-input: #fafafa; /* contact form inputs */
+  --color-text: #4b3b26;
+  --color-text-muted: #7a7c7b; /* caption */
+  --color-text-soft: #9a9c9b; /* form helper / soft muted */
+  --color-brand: #5b8c4a;
+  --color-on-brand: #ddebe3;
+  --color-brand-hover: #456b38; /* .ed-form-button / primary button hover */
+  --color-secondary: #c0baa1;
+  --color-on-secondary: #4b3b26;
+  --color-border: #4b3b26;
+  --color-link: #000000;
+  --color-link-hover: #575757;
+  --color-hero-overlay: rgba(0, 0, 0, 0.33);
+  /*
+   * Focus: site uses browser default outline (no custom ring).
+   * --color-focus is a DS stand-in (brand green) for accessible :focus-visible
+   * in primitives — see gaps.md / DESIGN-SYSTEM.md.
+   */
+  --color-focus: #5b8c4a;
+
+  /* —— Typography (Montserrat headings / Roboto body) —— */
+  --font-family-display: "Montserrat", Helvetica, sans-serif;
+  --font-family-body: "Roboto", Helvetica, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem; /* 16px body */
+  --font-size-nav: 1.1rem; /* ~17.6px nav */
+  --font-size-lg: 1.125rem; /* h5 18px */
+  --font-size-xl: 1.25rem; /* h4 20px */
+  --font-size-2xl: 1.5rem; /* h3 24px */
+  --font-size-3xl: 1.875rem; /* h2 30px */
+  --font-size-4xl: 2.4rem; /* h1 */
+  /* Declared body/button weight is 200; only Roboto 400 is loaded — use 400 */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500; /* h4/h5 declared; Montserrat 500 may synthesize */
+  --font-weight-semibold: 600; /* h2/h3 declared; Montserrat 600 may synthesize */
+  --font-weight-bold: 700;
+  --line-height-tight: 1.2;
+  --line-height-snug: 1.3;
+  --line-height-heading: 1.4;
+  --line-height-body: 1.5;
+  --letter-spacing-tight: 0;
+  --letter-spacing-nav: 0.0625em; /* ~1px at 16px */
+  --letter-spacing-wide: 0.125em; /* h3 ~2px */
+
+  /* —— Spacing (rem scale aligned to observed paddings) —— */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem; /* ~50px section spacers */
+
+  /* —— Radius (site chrome is sharp) —— */
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-full: 9999px; /* unused on site; circular logo/avatars only */
+
+  /* —— Elevation (chrome uses none; keep neutral — do not invent layers) —— */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+
+  /* —— Motion (links/buttons: .3s ease-in-out; menu ~150–200ms) —— */
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --ease-out: ease-in-out;
+
+  /* —— Layout —— */
+  --container-max: 75rem; /* ~1200px observed */
+  --gutter: 2.5vw;
+  --breakpoint-sm: 575px;
+  --breakpoint-md: 975px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    /* Extension — site does not define this; DS convenience only */
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+  }
+}
