@@ -7,3 +7,4 @@
 | 2026-10-18 | First DS extraction | Captured https://www.minco.co.za/ → tokens extracted; Button/Text lightly refined; inventory + decisions updated. |
 | 2026-10-18 | Full DS build | Extended tokens; primitives library; preview showcase; DESIGN-SYSTEM.md; inventory/architecture/decisions refreshed. |
 | 2026-10-18 | Source-complete stop | Audit 0/0; stopped npm/tsc/vite retries; README documents unlock + clean install before preview/build. |
+| 2026-10-18 | Git ops | Origin set to AN3S-CREATE/Minco-Design-System; DS committed on `main` (`6dbc751`+); no other branches to merge/delete. |
